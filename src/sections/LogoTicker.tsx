@@ -8,7 +8,7 @@ import Image from "next/image";
 export const LogoTicker = () => {
   return (
     <section>
-      <div className="container my-4 md:my-6 gap-5">
+      <div className="container mt-20 md:my-24 gap-5">
         <div className="flex gap-5 items-center">
           <div className="flex flex-1 md:flex-none">
             <h2 className="text-white">Trusted by top innovative teams</h2>

@@ -3,8 +3,8 @@ import Menuicon from "@/assets/icon-menu.svg";
 import Button from "@/components/Button";
 export const Header = () => {
   return (
-    <header className="py-5 border-b md:border-none md:rounded-lg border-white/15">
-      <div className="container flex md:border border-white/15 md:p-2.5 rounded-2xl justify-between md:max-w-2xl md:mx-auto ">
+    <header className="py-5 border-b md:border-none md:rounded-lg border-white/15 sticky inset-0 z-10 backdrop-blur-xl md:backdrop-filter-none">
+      <div className="container flex md:border border-white/15 md:p-2.5 rounded-2xl justify-between md:max-w-2xl md:mx-auto md:backdrop-blur-xl">
         <div>
           <Logoicon className="w-8 h-8 text-white border border-white/15 rounded-lg " />
         </div>
