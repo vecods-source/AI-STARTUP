@@ -34,10 +34,8 @@ export const Features = () => {
     <section className="py-20 md:py-24">
       <div className="container flex flex-col items-center">
         <div className="py-8">
-          <h2 className="font-medium mb-5 text-white text-center text-5xl md:text-6xl leading-[48px] tracking-tighter">
-            Elevate your SEO efforts.
-          </h2>
-          <p className="tracking-tight text-lg md:text-xl max-w-xl text-white/70 text-center font-thin">
+          <h2 className="title">Elevate your SEO efforts.</h2>
+          <p className="description">
             From small startups to large enterprises, our AI-driven tool has
             revolutionized the way businesses approach SEO.
           </p>

@@ -1,3 +1,10 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+
+.title {
+    @apply font-medium mb-5 text-white text-center text-5xl md:text-6xl leading-[48px] tracking-tighter;
+}
+.description {
+    @apply tracking-tight text-lg md:text-xl max-w-xl text-white/70 text-center font-thin;
+}
