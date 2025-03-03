@@ -37,7 +37,7 @@ export const Testimonials = () => {
         <h2 className="title">Beyond Expectations.</h2>
         <div className="flex justify-center">
           <p className="description" style={{ maxWidth: "384px" }}>
-            Our revolutionary AI SEO tools have transformed our clients'
+            Our revolutionary AI SEO tools have transformed our clients&apos;
             strategies.
           </p>
         </div>
