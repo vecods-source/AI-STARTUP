@@ -109,6 +109,36 @@ const Feature = (
   );
 };
 export const Features = () => {
+  const backgroundPositionX = useMotionValue(0);
+  const backgroundPositionY = useMotionValue(0);
+  const backgroundSizeX = useMotionValue(100);
+
+  const backgroundSize = useMotionTemplate`${backgroundSizeX}% auto`;
+  const backgroundPosition = useMotionTemplate`${backgroundPositionX}% ${backgroundPositionY}%`;
+
+  function handleSelect(index: number) {
+    setCurrentIndex(index);
+    const animateOptions: ValueAnimationTransition = {
+      duration: 2,
+      ease: "easeInOut",
+    };
+    animate(
+      backgroundPositionX,
+      [backgroundPositionX.get(), tabs[index].backgroundPositionX],
+      animateOptions
+    );
+    animate(
+      backgroundSizeX,
+      [backgroundSizeX.get(), 100, tabs[index].backgroundSizeX],
+      animateOptions
+    );
+    animate(
+      backgroundPositionY,
+      [backgroundPositionY.get(), tabs[index].backgroundPositionY],
+      animateOptions
+    );
+  }
+
   const [currentIndex, setCurrentIndex] = useState(0);
   return (
     <section className="py-20 md:py-24">
@@ -125,18 +155,21 @@ export const Features = () => {
             <Feature
               {...tab}
               key={index}
-              onClick={() => setCurrentIndex(index)}
+              onClick={() => handleSelect(index)}
               selected={currentIndex == index}
             />
           ))}
         </div>
         <div className="border border-white/20 p-2.5 rounded-xl w-full">
-          <div
+          <motion.div
             className="aspect-video border border-white/20 bg-cover rounded-lg"
-            style={{ backgroundImage: `url(${product.src})` }}
-          ></div>
+            style={{
+              backgroundImage: `url(${product.src})`,
+              backgroundSize,
+              backgroundPosition,
+            }}
+          ></motion.div>
         </div>
-        {/* <Image src={product} alt={"Product Image"} /> */}
       </div>
     </section>
   );
