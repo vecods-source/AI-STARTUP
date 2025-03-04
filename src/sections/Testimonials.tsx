@@ -1,8 +1,10 @@
+"use client";
 import avatar1 from "@/assets/avatar-1.png";
 import avatar2 from "@/assets/avatar-2.png";
 import avatar3 from "@/assets/avatar-3.png";
 import avatar4 from "@/assets/avatar-4.png";
 import Image from "next/image";
+import { motion } from "framer-motion";
 const testimonials = [
   {
     text: "“This product has completely transformed how I manage my projects and deadlines”",
@@ -41,12 +43,18 @@ export const Testimonials = () => {
             strategies.
           </p>
         </div>
-        <div className="overflow-hidden [mask-image:linear-gradient(to_right,transparent,black_10%,black_80%,transparent)]">
-          <div className="mt-5 inline-flex gap-5">
-            {testimonials.map((testimonial, index) => (
+        {/* overflow-hidden  */}
+        <div className="flex flex-1 overflow-hidden [mask-image:linear-gradient(to_right,transparent,black_10%,black_80%,transparent)]">
+          <motion.div
+            animate={{ x: "-50%" }}
+            transition={{ repeat: Infinity, duration: 20, ease: "linear" }}
+            className="flex flex-none mt-5 gap-5 pr-5"
+          >
+            {/*  */}
+            {[...testimonials, ...testimonials].map((testimonial, index) => (
               <div
                 key={index}
-                className="max-w-xs md:max-w-md flex-none text-white bg-[linear-gradient(243.09deg,rgba(140,69,255,0.3)_0%,#000_100%)] p-6 md:p-10 border border-white/15 rounded-xl"
+                className="max-w-xs md:max-w-md flex flex-col flex-none text-white bg-[linear-gradient(243.09deg,rgba(140,69,255,0.3)_0%,#000_100%)] p-6 md:p-10 border border-white/15 rounded-xl"
               >
                 <div className="tracking-tight font-extralight text-lg md:text-2xl">
                   {testimonial.text}
@@ -68,7 +76,7 @@ export const Testimonials = () => {
                 </div>
               </div>
             ))}
-          </div>
+          </motion.div>
         </div>
       </div>
     </section>
