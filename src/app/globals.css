@@ -8,3 +8,29 @@
 .description {
     @apply tracking-tight text-lg md:text-xl max-w-xl text-white/70 text-center font-thin;
 }
+
+::selection {
+    background-color: rgba(50,23,92,1);
+    color: rgb(246, 236, 255);
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+::-webkit-scrollbar {
+    width: 12px;
+}
+
+::-webkit-scrollbar-track {
+    background: #f1f1f100;
+}
+
+::-webkit-scrollbar-thumb {
+    background: rgba(50,23,92,1);
+    border-radius: 50px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+    background: #555;
+}
